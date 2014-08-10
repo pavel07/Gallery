@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Gallery.Models;
 
 namespace Gallery.Controllers
 {
@@ -17,12 +19,31 @@ namespace Gallery.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Usuario.ToList());
+            return View();
         }
-
+        [HttpPost]
+        public ActionResult Index(Login login)
+        {
+            int Id_User = VerifyUser(login);
+            if (Id_User != -1)
+                return RedirectToAction("Index", "Galeria", new {/* routeValues, for example: */ id = Id_User });
+            return View();
+        }
         //
         // GET: /Usuario/Details/5
-
+        public int VerifyUser(Login login)
+        {
+            ObjectResult<SP_SELECT_USUARIOS_Result> usuario = db.SP_SELECT_USUARIOS(login.UserName);
+           
+            
+            if (usuario != null)
+            {
+                if (!usuario.CONTRASENA.Equals(login.Password))
+                    return -1;
+                
+            }
+            return usuario.ID_USUARIO;
+        }
         public ActionResult Details(int id = 0)
         {
             Usuario usuario = db.Usuario.Find(id);
