@@ -1,0 +1,43 @@
+﻿@model Gallery.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Usuario</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_USUARIO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_USUARIO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NOMBRE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NOMBRE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CORREO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CORREO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CONTRASENA)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CONTRASENA)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
