@@ -20,23 +20,9 @@ public partial class Galeria
 
     public Galeria()
     {
-<<<<<<< HEAD
-        public Galeria()
-        {
-            this.Foto = new HashSet<Foto>();
-        }
-    
-        public int ID_GALERIA { get; set; }
-        public string NOMBRE { get; set; }
-        public string CORREO { get; set; }
-    
-        public virtual ICollection<Foto> Foto { get; set; }
-        public virtual Usuario Usuario { get; set; }
-=======
 
         this.Foto = new HashSet<Foto>();
 
->>>>>>> 30d411a20bac21e414744856adb9c9334211bf42
     }
 
 
