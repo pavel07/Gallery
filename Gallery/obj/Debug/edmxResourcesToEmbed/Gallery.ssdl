@@ -14,11 +14,11 @@
     </Key>
     <Property Name="ID_GALERIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+    <Property Name="CORREO" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>
-      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="CORREO" />
     </Key>
     <Property Name="ID_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
@@ -37,15 +37,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Galeria__ID_USUA__0CBAE877">
+  <Association Name="FK_CORREO_USUARIO">
     <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
     <End Role="Galeria" Type="Self.Galeria" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Usuario">
-        <PropertyRef Name="ID_USUARIO" />
+        <PropertyRef Name="CORREO" />
       </Principal>
       <Dependent Role="Galeria">
-        <PropertyRef Name="ID_USUARIO" />
+        <PropertyRef Name="CORREO" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -79,7 +79,7 @@
       <End Role="Galeria" EntitySet="Galeria" />
       <End Role="Foto" EntitySet="Foto" />
     </AssociationSet>
-    <AssociationSet Name="FK__Galeria__ID_USUA__0CBAE877" Association="Self.FK__Galeria__ID_USUA__0CBAE877">
+    <AssociationSet Name="FK_CORREO_USUARIO" Association="Self.FK_CORREO_USUARIO">
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="Galeria" EntitySet="Galeria" />
     </AssociationSet>
