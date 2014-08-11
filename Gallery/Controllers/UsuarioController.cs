@@ -6,6 +6,7 @@ using System.Data.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.WebPages;
 using Gallery.Models;
 
 namespace Gallery.Controllers
@@ -24,39 +25,27 @@ namespace Gallery.Controllers
         [HttpPost]
         public ActionResult Index(Login login)
         {
-            int Id_User = VerifyUser(login);
-            if (Id_User != -1)
-                return RedirectToAction("Index", "Galeria", new {/* routeValues, for example: */ id = Id_User });
+            string correo = VerifyUser(login);
+            if (!correo.IsEmpty())
+                return RedirectToAction("Index", "Galeria", new {/* routeValues, for example: */ id = correo });
             return View();
         }
         //
         // GET: /Usuario/Details/5
-        public int VerifyUser(Login login)
+        public string VerifyUser(Login login)
         {
-            ObjectResult<SP_SELECT_USUARIOS_Result> usuario = db.SP_SELECT_USUARIOS(login.UserName);
+            Usuario usuario = db.Usuario.Find(login.UserName);
            
             
-            if (usuario != null)
-            {
-                if (!usuario.CONTRASENA.Equals(login.Password))
-                    return -1;
-                
-            }
-            return usuario.ID_USUARIO;
-        }
-        public ActionResult Details(int id = 0)
-        {
-            Usuario usuario = db.Usuario.Find(id);
             if (usuario == null)
             {
-                return HttpNotFound();
+               return "";
+                
             }
-            return View(usuario);
+            if (usuario.CONTRASENA.Equals(login.Password))
+                return usuario.CORREO;
+            return "";
         }
-
-        //
-        // GET: /Usuario/Create
-
         public ActionResult Create()
         {
             return View();
@@ -78,7 +67,17 @@ namespace Gallery.Controllers
 
             return View(usuario);
         }
+       /* public ActionResult Details(int id = 0)
+        {
+            Usuario usuario = db.Usuario.Find(id);
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
+        }
 
+       
         //
         // GET: /Usuario/Edit/5
 
@@ -138,6 +137,6 @@ namespace Gallery.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
-        }
+        }*/
     }
 }
