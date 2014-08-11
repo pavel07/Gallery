@@ -15,7 +15,7 @@
     <EntitySetMapping Name="Galeria">
       <EntityTypeMapping TypeName="Gallery.Galeria">
         <MappingFragment StoreEntitySet="Galeria">
-          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="CORREO" ColumnName="CORREO" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="ID_GALERIA" ColumnName="ID_GALERIA" />
         </MappingFragment>

@@ -166,12 +166,6 @@
     <Compile Include="Controllers\GaleriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Foto.cs">
-      <DependentUpon>Gallery.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Galeria.cs">
-      <DependentUpon>Gallery.tt</DependentUpon>
-    </Compile>
     <Compile Include="Gallery.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,12 +186,6 @@
     </Compile>
     <Compile Include="Models\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SP_SELECT_USUARIOS_Result.cs">
-      <DependentUpon>Gallery.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Usuario.cs">
-      <DependentUpon>Gallery.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

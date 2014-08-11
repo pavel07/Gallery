@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Users\PavelNote\Documents\Pavel UNITEC\2014-3\Analisis y Disenios de Sistemas\Gallery\Gallery\Gallery.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\TECNOCOMP\Documents\GitHub\Gallery\Gallery\Gallery.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
