@@ -45,19 +45,6 @@ namespace Gallery.Controllers
             }
             return usuario.CORREO;
         }
-       /* public ActionResult Details(int id = 0)
-        {
-            Usuario usuario = db.Usuario.Find(id);
-            if (usuario == null)
-            {
-                return HttpNotFound();
-            }
-            return View(usuario);
-        }
-
-        //
-        // GET: /Usuario/Create
-
         public ActionResult Create()
         {
             return View();
@@ -79,7 +66,17 @@ namespace Gallery.Controllers
 
             return View(usuario);
         }
+       /* public ActionResult Details(int id = 0)
+        {
+            Usuario usuario = db.Usuario.Find(id);
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
+        }
 
+       
         //
         // GET: /Usuario/Edit/5
 
