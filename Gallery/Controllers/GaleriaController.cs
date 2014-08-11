@@ -15,7 +15,7 @@ namespace Gallery.Controllers
         //
         // GET: /Galeria/
 
-        public ActionResult Index()
+        public ActionResult Index(string correo)
         {
             var galeria = db.Galeria.Include(g => g.Usuario);
             return View(galeria.ToList());

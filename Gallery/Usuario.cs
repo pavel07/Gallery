@@ -19,7 +19,7 @@ namespace Gallery
             this.Galeria = new HashSet<Galeria>();
         }
     
-        public int ID_USUARIO { get; set; }
+        
         public string NOMBRE { get; set; }
         public string CORREO { get; set; }
         public string CONTRASENA { get; set; }
