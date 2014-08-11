@@ -37,13 +37,14 @@ namespace Gallery.Controllers
             Usuario usuario = db.Usuario.Find(login.UserName);
            
             
-            if (usuario != null)
+            if (usuario == null)
             {
-                if (!usuario.CONTRASENA.Equals(login.Password))
-                    return "";
+               return "";
                 
             }
-            return usuario.CORREO;
+            if (usuario.CONTRASENA.Equals(login.Password))
+                return usuario.CORREO;
+            return "";
         }
         public ActionResult Create()
         {

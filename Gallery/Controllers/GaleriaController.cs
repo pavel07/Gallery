@@ -57,23 +57,12 @@ namespace Gallery.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ID_USUARIO = new SelectList(db.Usuario, "ID_USUARIO", "NOMBRE", galeria.ID_USUARIO);
+         //   ViewBag.ID_USUARIO = new SelectList(db.Usuario, "ID_USUARIO", "NOMBRE", galeria.ID_USUARIO);
             return View(galeria);
         }
 
         //
         // GET: /Galeria/Edit/5
-
-        public ActionResult Edit(int id = 0)
-        {
-            Galeria galeria = db.Galeria.Find(id);
-            if (galeria == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.ID_USUARIO = new SelectList(db.Usuario, "ID_USUARIO", "NOMBRE", galeria.ID_USUARIO);
-            return View(galeria);
-        }
 
         //
         // POST: /Galeria/Edit/5
@@ -88,7 +77,7 @@ namespace Gallery.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ID_USUARIO = new SelectList(db.Usuario, "ID_USUARIO", "NOMBRE", galeria.ID_USUARIO);
+            //ViewBag.ID_USUARIO = new SelectList(db.Usuario, "ID_USUARIO", "NOMBRE", galeria.ID_USUARIO);
             return View(galeria);
         }
 
