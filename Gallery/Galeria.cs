@@ -21,7 +21,7 @@ namespace Gallery
     
         public int ID_GALERIA { get; set; }
         public string NOMBRE { get; set; }
-        public int ID_USUARIO { get; set; }
+        public string CORREO { get; set; }
     
         public virtual ICollection<Foto> Foto { get; set; }
         public virtual Usuario Usuario { get; set; }

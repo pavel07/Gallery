@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="Gallery.Galeria" Width="1.5" PointX="3" PointY="0.875" />
         <EntityTypeShape EntityType="Gallery.Usuario" Width="1.5" PointX="0.75" PointY="0.875" />
         <AssociationConnector Association="Gallery.FK__Foto__ID_GALERIA__07020F21" />
-        <AssociationConnector Association="Gallery.FK__Galeria__ID_USUA__0CBAE877" />
+        <AssociationConnector Association="Gallery.FK_CORREO_USUARIO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
