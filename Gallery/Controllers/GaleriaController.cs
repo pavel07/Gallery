@@ -11,13 +11,16 @@ namespace Gallery.Controllers
     public class GaleriaController : Controller
     {
         private GalleryContainer db = new GalleryContainer();
-
+        public static string Email ;
         //
         // GET: /Galeria/
 
-        public ActionResult Index(string correo)
+        public ActionResult Index(string userEmail)
         {
+            if(Email==null)
+                Email = userEmail;
             var galeria = db.Galeria.Include(g => g.Usuario);
+            Redirect("/Galeria/Index");
             return View(galeria.ToList());
         }
 
@@ -52,7 +55,7 @@ namespace Gallery.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Galeria.Add(galeria);
+                db.SP_INSERT_GALERIA(galeria.NOMBRE, Email);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

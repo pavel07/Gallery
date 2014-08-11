@@ -6,6 +6,7 @@ using System.Data.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using System.Web.WebPages;
 using Gallery.Models;
 
@@ -27,7 +28,7 @@ namespace Gallery.Controllers
         {
             string correo = VerifyUser(login);
             if (!correo.IsEmpty())
-                return RedirectToAction("Index", "Galeria", new {/* routeValues, for example: */ id = correo });
+                return RedirectToAction("Index", "Galeria",new {/* routeValues, for example: */ userEmail = correo });
             return View();
         }
         //
