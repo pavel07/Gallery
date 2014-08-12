@@ -15,7 +15,7 @@ namespace Gallery.Controllers
         //
         // GET: /Foto/
 
-        public ActionResult Index()
+        public ActionResult Index(int idGaleria)
         {
             var foto = db.Foto.Include(f => f.Galeria);
             return View(foto.ToList());

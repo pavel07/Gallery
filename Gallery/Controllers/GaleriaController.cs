@@ -65,7 +65,7 @@ namespace Gallery.Controllers
 
         public ActionResult Ir_Fotos(int IdGaleria)
         {
-            return RedirectToAction("Index", "Galeria", new {/* routeValues, for example: */ idGaleria =IdGaleria  });
+            return RedirectToAction("Index", "Foto", new {/* routeValues, for example: */ idGaleria =IdGaleria  });
         }
     }
 }
