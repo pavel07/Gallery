@@ -20,8 +20,16 @@ namespace Gallery.Controllers
             
             Email = userEmail;
             var galeria = db.Galeria.Include(g => g.Usuario);
+            var galeria2=new List<Galeria>();
             Redirect("/Galeria/Index");
-            return View(galeria.ToList());
+            foreach (var g in galeria)
+            {
+                if (g.CORREO == Email)
+                {
+                    galeria2.Add(g);
+                }
+            }
+            return View(galeria2);
         }
 
         //
