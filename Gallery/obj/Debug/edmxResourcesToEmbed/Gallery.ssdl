@@ -55,7 +55,7 @@
   </Function>
   <Function Name="SP_INSERT_GALERIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Nombre" Type="varchar" Mode="In" />
-    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+    <Parameter Name="CORREO" Type="varchar" Mode="In" />
   </Function>
   <Function Name="SP_INSERT_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Nombre" Type="varchar" Mode="In" />

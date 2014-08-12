@@ -13,13 +13,6 @@
     <fieldset>
         <legend>Galeria</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ID_GALERIA)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ID_GALERIA)
-            @Html.ValidationMessageFor(model => model.ID_GALERIA)
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.NOMBRE)
@@ -29,13 +22,8 @@
             @Html.ValidationMessageFor(model => model.NOMBRE)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ID_USUARIO, "Usuario")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("ID_USUARIO", String.Empty)
-            @Html.ValidationMessageFor(model => model.ID_USUARIO)
-        </div>
+        
+       
 
         <p>
             <input type="submit" value="Create" />

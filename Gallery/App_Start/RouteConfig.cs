@@ -18,6 +18,17 @@ namespace Gallery
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Usuario", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Gallery",
+                url: "{controller}/{action}/{userEmail}",
+                defaults: new { controller = "Galeria", action = "Index", userEmail = UrlParameter.Optional }
+                );
+            routes.MapRoute(
+                name: "Fotos",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Foto", action = "Index", id = UrlParameter.Optional }
+                );
         }
     }
 }

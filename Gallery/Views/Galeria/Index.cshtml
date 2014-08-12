@@ -26,18 +26,23 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ID_GALERIA)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.NOMBRE)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Usuario.NOMBRE)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            <p>
+                @Html.ActionLink(
+                    "Ir a fotos",                                                  // linkText
+                    "Index",                                    // actionName
+                    "Foto",                                                   // controllerName
+                    new {                                                     // routeValues
+                        id = item.ID_GALERIA
+                    },
+                    null                                                      // htmlAttributes
+                            )
+            </p>
         </td>
     </tr>
 }

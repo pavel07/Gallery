@@ -14,7 +14,7 @@
     </FunctionImport>
     <FunctionImport Name="SP_INSERT_GALERIA">
       <Parameter Name="Nombre" Mode="In" Type="String" />
-      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+      <Parameter Name="CORREO" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="SP_INSERT_USUARIO">
       <Parameter Name="Nombre" Mode="In" Type="String" />

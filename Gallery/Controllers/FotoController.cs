@@ -14,29 +14,14 @@ namespace Gallery.Controllers
 
         //
         // GET: /Foto/
-
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Index(string id)
         {
             var foto = db.Foto.Include(f => f.Galeria);
             return View(foto.ToList());
         }
 
-        //
-        // GET: /Foto/Details/5
-
-        public ActionResult Details(int id = 0)
-        {
-            Foto foto = db.Foto.Find(id);
-            if (foto == null)
-            {
-                return HttpNotFound();
-            }
-            return View(foto);
-        }
-
-        //
-        // GET: /Foto/Create
-
+   
         public ActionResult Create()
         {
             ViewBag.ID_GALERIA = new SelectList(db.Galeria, "ID_GALERIA", "NOMBRE");
@@ -61,63 +46,7 @@ namespace Gallery.Controllers
             return View(foto);
         }
 
-        //
-        // GET: /Foto/Edit/5
-
-        public ActionResult Edit(int id = 0)
-        {
-            Foto foto = db.Foto.Find(id);
-            if (foto == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.ID_GALERIA = new SelectList(db.Galeria, "ID_GALERIA", "NOMBRE", foto.ID_GALERIA);
-            return View(foto);
-        }
-
-        //
-        // POST: /Foto/Edit/5
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(Foto foto)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(foto).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.ID_GALERIA = new SelectList(db.Galeria, "ID_GALERIA", "NOMBRE", foto.ID_GALERIA);
-            return View(foto);
-        }
-
-        //
-        // GET: /Foto/Delete/5
-
-        public ActionResult Delete(int id = 0)
-        {
-            Foto foto = db.Foto.Find(id);
-            if (foto == null)
-            {
-                return HttpNotFound();
-            }
-            return View(foto);
-        }
-
-        //
-        // POST: /Foto/Delete/5
-
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Foto foto = db.Foto.Find(id);
-            db.Foto.Remove(foto);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
+      
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
