@@ -26,16 +26,15 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ID_GALERIA)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.NOMBRE)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Usuario.NOMBRE)
         </td>
         <td>
-            
+            <p>
+                @Html.ActionLink("Ir a Fotos", "Ir_Fotos", item.ID_GALERIA)
+            </p>
         </td>
     </tr>
 }

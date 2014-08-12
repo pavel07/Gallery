@@ -62,5 +62,10 @@ namespace Gallery.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        public ActionResult Ir_Fotos(int IdGaleria)
+        {
+            return RedirectToAction("Index", "Galeria", new {/* routeValues, for example: */ idGaleria =IdGaleria  });
+        }
     }
 }
