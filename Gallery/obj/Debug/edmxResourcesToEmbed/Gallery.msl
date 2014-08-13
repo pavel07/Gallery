@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="Gallery" />
+  <Alias Key="Target" Value="Gallery.Store" />
+  <EntityContainerMapping CdmEntityContainer="GalleryContainer" StorageEntityContainer="GalleryStoreContainer">
+    <EntitySetMapping Name="Foto">
+      <EntityTypeMapping TypeName="Gallery.Foto">
+        <MappingFragment StoreEntitySet="Foto">
+          <ScalarProperty Name="ID_GALERIA" ColumnName="ID_GALERIA" />
+          <ScalarProperty Name="IMAGEN" ColumnName="IMAGEN" />
+          <ScalarProperty Name="ID_FOTO" ColumnName="ID_FOTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Galeria">
+      <EntityTypeMapping TypeName="Gallery.Galeria">
+        <MappingFragment StoreEntitySet="Galeria">
+          <ScalarProperty Name="CORREO" ColumnName="CORREO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_GALERIA" ColumnName="ID_GALERIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="Gallery.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+          <ScalarProperty Name="CORREO" ColumnName="CORREO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_INSERT_FOTO" FunctionName="Gallery.Store.SP_INSERT_FOTO" />
+    <FunctionImportMapping FunctionImportName="SP_INSERT_GALERIA" FunctionName="Gallery.Store.SP_INSERT_GALERIA" />
+    <FunctionImportMapping FunctionImportName="SP_INSERT_USUARIO" FunctionName="Gallery.Store.SP_INSERT_USUARIO" />
+    <FunctionImportMapping FunctionImportName="SP_SELECT_FOTO" FunctionName="Gallery.Store.SP_SELECT_FOTO" />
+    <FunctionImportMapping FunctionImportName="SP_SELECT_GALERIA" FunctionName="Gallery.Store.SP_SELECT_GALERIA" />
+    <FunctionImportMapping FunctionImportName="SP_SELECT_USUARIOS" FunctionName="Gallery.Store.SP_SELECT_USUARIOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Gallery.SP_SELECT_USUARIOS_Result">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="CORREO" ColumnName="CORREO" />
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

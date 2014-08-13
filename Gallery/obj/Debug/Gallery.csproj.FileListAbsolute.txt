@@ -211,8 +211,6 @@ C:\Users\Siwady\Desktop\Gallery\Gallery\Gallery\bin\zh-Hant\System.Spatial.resou
 C:\Users\Siwady\Desktop\Gallery\Gallery\Gallery\obj\Debug\Gallery.csprojResolveAssemblyReference.cache
 C:\Users\Siwady\Desktop\Gallery\Gallery\Gallery\obj\Debug\Gallery.dll
 C:\Users\Siwady\Desktop\Gallery\Gallery\Gallery\obj\Debug\Gallery.pdb
-<<<<<<< HEAD
-=======
 C:\Users\TECNOCOMP\Desktop\New folder (2)\Gallery-master\Gallery\bin\Gallery.dll.config
 C:\Users\TECNOCOMP\Desktop\New folder (2)\Gallery-master\Gallery\bin\Gallery.dll
 C:\Users\TECNOCOMP\Desktop\New folder (2)\Gallery-master\Gallery\bin\Gallery.pdb
@@ -284,4 +282,3 @@ C:\Users\TECNOCOMP\Desktop\New folder (2)\Gallery-master\Gallery\bin\zh-Hant\Sys
 C:\Users\TECNOCOMP\Desktop\New folder (2)\Gallery-master\Gallery\obj\Debug\Gallery.csprojResolveAssemblyReference.cache
 C:\Users\TECNOCOMP\Desktop\New folder (2)\Gallery-master\Gallery\obj\Debug\Gallery.dll
 C:\Users\TECNOCOMP\Desktop\New folder (2)\Gallery-master\Gallery\obj\Debug\Gallery.pdb
->>>>>>> 4781a9fe508d85061cceef2919adeeed61477838

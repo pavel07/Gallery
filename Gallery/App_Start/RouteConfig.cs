@@ -26,13 +26,8 @@ namespace Gallery
                 );
             routes.MapRoute(
                 name: "Fotos",
-<<<<<<< HEAD
-                url: "{controller}/{action}/{idGaleria}",
-                defaults: new { controller = "Foto", action = "Index", idGaleria = UrlParameter.Optional }
-=======
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Foto", action = "Index", id = UrlParameter.Optional }
->>>>>>> 4781a9fe508d85061cceef2919adeeed61477838
                 );
         }
     }
