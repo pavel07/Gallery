@@ -48,6 +48,7 @@ namespace Gallery.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Galeria galeria)
         {
+            
             if (ModelState.IsValid)
             {
                 db.SP_INSERT_GALERIA(galeria.NOMBRE, Email);
@@ -63,9 +64,13 @@ namespace Gallery.Controllers
             base.Dispose(disposing);
         }
 
+<<<<<<< HEAD
         public ActionResult Ir_Fotos(int IdGaleria)
         {
             return RedirectToAction("Index", "Foto", new {/* routeValues, for example: */ idGaleria =IdGaleria  });
         }
+=======
+      
+>>>>>>> 4781a9fe508d85061cceef2919adeeed61477838
     }
 }

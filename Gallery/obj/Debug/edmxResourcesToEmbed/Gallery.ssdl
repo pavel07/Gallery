@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Gallery.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Foto">
+    <Key>
+      <PropertyRef Name="ID_FOTO" />
+    </Key>
+    <Property Name="ID_FOTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IMAGEN" Type="image" Nullable="false" />
+    <Property Name="ID_GALERIA" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Galeria">
+    <Key>
+      <PropertyRef Name="ID_GALERIA" />
+    </Key>
+    <Property Name="ID_GALERIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CORREO" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="CORREO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CORREO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CONTRASENA" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Foto__ID_GALERIA__07020F21">
+    <End Role="Galeria" Type="Self.Galeria" Multiplicity="1" />
+    <End Role="Foto" Type="Self.Foto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Galeria">
+        <PropertyRef Name="ID_GALERIA" />
+      </Principal>
+      <Dependent Role="Foto">
+        <PropertyRef Name="ID_GALERIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CORREO_USUARIO">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Galeria" Type="Self.Galeria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="CORREO" />
+      </Principal>
+      <Dependent Role="Galeria">
+        <PropertyRef Name="CORREO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_INSERT_FOTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IMAGEN" Type="image" Mode="In" />
+    <Parameter Name="ID_GALERIA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_INSERT_GALERIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="CORREO" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_INSERT_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="CORREO" Type="varchar" Mode="In" />
+    <Parameter Name="CONTRASENA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SELECT_FOTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_GALERIA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SELECT_GALERIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SELECT_USUARIOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CORREO" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="GalleryStoreContainer">
+    <EntitySet Name="Foto" EntityType="Self.Foto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Galeria" EntityType="Self.Galeria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Foto__ID_GALERIA__07020F21" Association="Self.FK__Foto__ID_GALERIA__07020F21">
+      <End Role="Galeria" EntitySet="Galeria" />
+      <End Role="Foto" EntitySet="Foto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CORREO_USUARIO" Association="Self.FK_CORREO_USUARIO">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Galeria" EntitySet="Galeria" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
